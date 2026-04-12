@@ -1,0 +1,25 @@
+.login-container { display: flex; justify-content: center; align-items: center; min-height: 100vh; background-color: #f5f6fa; }
+.login-card { background: white; padding: 3rem; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); width: 100%; max-width: 400px; text-align: center; }
+
+.brand { font-size: 1.8rem; font-weight: 900; color: #2d3436; margin-bottom: 1rem; gap: 10px; }
+.icon-brand { width: 32px; height: 32px; color: #ff6b6b; }
+.flex-center { display: flex; align-items: center; justify-content: center; }
+
+h2 { margin: 0; color: #2d3436; }
+.subtitle { color: #636e72; margin-bottom: 2rem; font-size: 0.9rem; }
+
+.role-toggle { display: flex; background: #f1f2f6; border-radius: 8px; padding: 4px; margin-bottom: 2rem; }
+.toggle-btn { flex: 1; padding: 10px; border: none; background: transparent; border-radius: 6px; font-weight: bold; color: #636e72; cursor: pointer; transition: 0.3s; }
+.toggle-btn.active { background: white; color: #2d3436; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+
+.login-form { display: flex; flex-direction: column; gap: 1.2rem; text-align: left; }
+.input-group { display: flex; flex-direction: column; gap: 0.5rem; }
+label { font-size: 0.85rem; font-weight: bold; color: #2d3436; }
+input { padding: 12px; border: 1px solid #dfe6e9; border-radius: 8px; font-family: inherit; transition: 0.2s; }
+input:focus { outline: none; border-color: #1dd1a1; box-shadow: 0 0 0 3px rgba(29,209,161,0.2); }
+
+.btn-login { margin-top: 1rem; background: #1dd1a1; color: white; border: none; padding: 14px; border-radius: 8px; font-size: 1.1rem; font-weight: bold; cursor: pointer; transition: 0.2s; }
+.btn-login:hover { background: #10ac84; transform: translateY(-2px); }
+
+.signup-toggle { text-align: center; margin-top: 0.8rem; }
+.link-btn { background: none; border: none; color: #1dd1a1; cursor: pointer; font-weight: bold; }

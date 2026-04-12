@@ -1,0 +1,25 @@
+.cart-section { flex: 1; position: sticky; top: 2rem; }
+.cart-card { background: white; border-radius: 16px; padding: 1.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+.empty-state { text-align: center; color: #a4b0be; padding: 2rem 0; font-style: italic; }
+.cart-item { display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0; border-bottom: 1px dashed #f1f2f6; }
+.item-details { flex: 1; }
+.item-name { display: block; font-weight: 500; color: #2d3436; }
+.item-price { display: block; font-size: 0.9rem; color: #636e72; margin-top: 0.2rem; }
+.quantity-controls { display: flex; align-items: center; gap: 0.5rem; }
+.qty-btn { width: 24px; height: 24px; border: 1px solid #dfe6e9; background: white; color: #636e72; border-radius: 4px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-weight: bold; }
+.qty-btn:hover { background: #f1f2f6; }
+.quantity { min-width: 20px; text-align: center; font-weight: bold; }
+.remove-btn { background: #ff6b6b; color: white; border: none; padding: 4px; border-radius: 4px; cursor: pointer; }
+.remove-btn:hover { background: #ee5a52; }
+.divider { height: 1px; background: #dfe6e9; margin: 1rem 0; }
+.total-row { display: flex; justify-content: space-between; font-size: 1.2rem; font-weight: bold; margin-bottom: 1rem; }
+.total-price { color: #ff6b6b; }
+.time-picker { display: flex; flex-direction: column; gap: 0.8rem; margin-bottom: 1.5rem; }
+.time-picker label { font-size: 0.9rem; font-weight: bold; color: #636e72; justify-content: flex-start; }
+.time-picker input { padding: 10px; border: 1px solid #dfe6e9; border-radius: 8px; font-family: inherit; outline: none; transition: 0.2s; }
+.time-picker input:focus { border-color: #1dd1a1; box-shadow: 0 0 0 3px rgba(29,209,161,0.2); }
+.btn-checkout { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; background: #1dd1a1; color: white; border: none; padding: 14px; border-radius: 10px; font-size: 1.1rem; font-weight: bold; cursor: pointer; transition: 0.2s; }
+.btn-checkout:hover { background: #10ac84; transform: scale(1.02); }
+.flex-center { display: flex; align-items: center; justify-content: center; gap: 8px; }
+.icon { width: 18px; height: 18px; }
+.icon-sm { width: 16px; height: 16px; }

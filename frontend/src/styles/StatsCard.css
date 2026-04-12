@@ -1,0 +1,6 @@
+.stat-card { background: white; border-radius: 16px; padding: 1.5rem; display: flex; align-items: center; gap: 1rem; box-shadow: 0 4px 20px rgba(0,0,0,0.08); transition: transform 0.3s ease; }
+.stat-card:hover { transform: translateY(-4px); }
+.stat-icon { width: 50px; height: 50px; border-radius: 12px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; color: white; }
+.stat-info { flex: 1; }
+.stat-number { display: block; font-size: 1.8rem; font-weight: 800; color: #2d3436; margin-bottom: 0.25rem; }
+.stat-label { font-size: 0.9rem; color: #636e72; font-weight: 500; }

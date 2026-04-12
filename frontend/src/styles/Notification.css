@@ -1,0 +1,24 @@
+.notification-overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; z-index: 1000; backdrop-filter: blur(4px); }
+.notification-container { max-width: 400px; width: 90%; margin: 20px; }
+.notification-content { background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 20px 40px rgba(0,0,0,0.15); display: flex; align-items: flex-start; gap: 1rem; position: relative; overflow: hidden; }
+.notification-content::before{ content:''; position:absolute; top:0; left:0; right:0; height:4px; background: linear-gradient(90deg, #1dd1a1, #10ac84); }
+.notification-content.error::before{ background: linear-gradient(90deg, #ff6b6b, #ee5a52); }
+.notification-content.info::before{ background: linear-gradient(90deg, #ff9f43, #ee5a24); }
+.notification-icon{ flex-shrink:0; width:48px; height:48px; border-radius:50%; display:flex; align-items:center; justify-content:center; color:white; font-size:1.5rem; }
+.notification-content.success .notification-icon{ background: linear-gradient(135deg, #1dd1a1, #10ac84); animation: bounceIn 0.6s ease-out; }
+.notification-content.error .notification-icon{ background: linear-gradient(135deg, #ff6b6b, #ee5a52); animation: shake 0.6s ease-out; }
+.notification-content.info .notification-icon{ background: linear-gradient(135deg, #ff9f43, #ee5a24); animation: pulse 2s infinite; }
+.notification-message{ flex:1; }
+.notification-message h3{ margin:0 0 0.5rem 0; font-size:1.2rem; font-weight:700; color:#2d3436; }
+.notification-message p{ margin:0; color:#636e72; line-height:1.5; }
+.notification-close{ background:none; border:none; color:#a4b0be; cursor:pointer; padding:4px; border-radius:4px; transition:0.2s; flex-shrink:0; }
+.notification-close:hover{ background:#f1f2f6; color:#636e72; }
+@keyframes bounceIn{0%{transform:scale(0.3);opacity:0;}50%{transform:scale(1.05);}70%{transform:scale(0.9);}100%{transform:scale(1);opacity:1;}}
+@keyframes shake{0%,100%{transform:translateX(0);}10%,30%,50%,70%,90%{transform:translateX(-5px);}20%,40%,60%,80%{transform:translateX(5px);}}
+@keyframes pulse{0%{transform:scale(1);}50%{transform:scale(1.1);}100%{transform:scale(1);}}
+.notification-fade-enter-active,.notification-fade-leave-active{transition:all 0.3s ease;}
+.notification-fade-enter-from{opacity:0;transform:scale(0.8) translateY(-20px);}
+.notification-fade-leave-to{opacity:0;transform:scale(0.8) translateY(-20px);}
+.notification-fade-enter-active .notification-content,.notification-fade-leave-active .notification-content{animation:slideInBounce 0.4s ease-out;}
+@keyframes slideInBounce{0%{transform:translateY(-100px) scale(0.8);opacity:0;}60%{transform:translateY(10px) scale(1.02); opacity:1;}100%{transform:translateY(0) scale(1); opacity:1;}}
+@media(max-width:480px){ .notification-content{padding:1.5rem; flex-direction:column; text-align:center;} .notification-icon{width:40px; height:40px; font-size:1.2rem;} .notification-message h3{font-size:1.1rem;} }

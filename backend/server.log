@@ -1,0 +1,8 @@
+[dotenv@17.3.1] injecting env (5) from .env -- tip: ⚡️ secrets for agents: https://dotenvx.com/as2
+CampusBite Backend Server is running on http://localhost:5000
+Successfully connected to the CampusBite MySQL Database!
+✓ Students table created/verified
+✓ Admin table created/verified
+✓ Orders table created/verified
+✓ Menu items table created/verified
+✓ Database schema initialized successfully

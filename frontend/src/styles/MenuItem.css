@@ -1,0 +1,6 @@
+.menu-item { display: flex; justify-content: space-between; align-items: center; background: #f8f9fa; padding: 1rem; border-radius: 8px; }
+.item-info h4 { margin: 0 0 0.3rem 0; color: #2d3436; }
+.item-info p { margin: 0; font-size: 0.9rem; color: #636e72; }
+.btn-delete { display: flex; align-items: center; gap: 6px; background: #ff6b6b; color: white; border: none; padding: 8px 12px; border-radius: 6px; font-weight: bold; cursor: pointer; transition: 0.2s; white-space: nowrap; }
+.btn-delete:hover { background: #ee5a52; }
+.icon-sm { width: 16px; height: 16px; }
