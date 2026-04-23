@@ -77,8 +77,8 @@ const saveProfile = async () => {
   }
 };
 
-const formatDate = (date: string) => new Date(date).toLocaleDateString();
-const formatTime = (time: string) => {
+const formatDate = (date?: string) => date ? new Date(date).toLocaleDateString() : '';
+const formatTime = (time?: string) => {
   if (!time) return '';
   if (typeof time === 'string' && time.match(/^\d{2}:\d{2}:\d{2}/)) {
     const [hours, minutes] = time.split(':');
