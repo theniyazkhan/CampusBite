@@ -135,8 +135,8 @@ const loadMostSold = async () => {
     let fetchedItems: MenuItem[] = [];
 
     // Check if the API method exists and try to fetch from the backend
-    if (typeof menuApi.getMostSold === 'function') {
-      const response = await menuApi.getMostSold();
+    if (typeof (menuApi as any).getMostSold === 'function') {
+      const response = await (menuApi as any).getMostSold();
       if (response.data && response.data.length > 0) {
         // Filter out items that are already in the "New Arrivals" section
         fetchedItems = response.data.filter((item: MenuItem) => !newArrivalIds.includes(item.item_id));
