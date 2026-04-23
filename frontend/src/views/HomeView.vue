@@ -32,7 +32,7 @@ const loading = ref(true);
 onMounted(async () => {
   try {
     // Make a GET request to our Node backend
-    const response = await axios.get('http://localhost:5000/api/menu');
+    const response = await axios.get('https://campusbite-vj5w.onrender.com/api/menu');
     // Store the data from the database into our variable
     menuItems.value = response.data;
   } catch (error) {

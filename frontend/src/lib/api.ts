@@ -2,7 +2,7 @@ import axios from 'axios';
 import type { AxiosResponse } from 'axios';
 import type { MenuItem, StudentInfo, AdminInfo, Order, ApiResponse } from '../types/index';
 
-const API_BASE_URL = 'http://localhost:5000/api';
+const API_BASE_URL = 'https://campusbite-vj5w.onrender.com/api';
 
 const apiClient = axios.create({
   baseURL: API_BASE_URL,

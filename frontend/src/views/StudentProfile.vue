@@ -57,7 +57,7 @@ const saveProfile = async () => {
   }
   isSaving.value = true;
   try {
-    await axios.put('http://localhost:5000/api/auth/update', {
+    await axios.put('https://campusbite-vj5w.onrender.com/api/auth/update', {
       student_id: studentId.value,
       name: editFormData.value.name,
       phone: editFormData.value.phone
