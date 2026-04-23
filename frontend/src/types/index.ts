@@ -1,7 +1,7 @@
 // Common TypeScript interfaces for the application
 
 export interface MenuItem {
-  id: number;
+  item_id: number;
   name: string;
   description: string;
   price: number | string;
@@ -39,7 +39,7 @@ export interface Order {
 }
 
 export interface OrderItem {
-  id: number;
+  item_id: number;
   name: string;
   price: number | string;
   quantity: number;
@@ -51,4 +51,3 @@ export interface ApiResponse<T> {
   data?: T;
   error?: string;
 }
-

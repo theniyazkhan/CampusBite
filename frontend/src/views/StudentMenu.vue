@@ -94,7 +94,6 @@
 import { ref, computed, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 import { menuApi, ordersApi } from '../lib/api';
-import type { MenuItem, CartItem } from '../types/index';
 import FoodCard from '../components/FoodCard.vue';
 import Cart from '../components/Cart.vue';
 import { useNotifications } from '../composables/useNotifications';
@@ -102,9 +101,9 @@ import { useNotifications } from '../composables/useNotifications';
 const router = useRouter();
 const { alert } = useNotifications();
 
-const mostSoldItems = ref<MenuItem[]>([]);
-const menuItems = ref<MenuItem[]>([]);
-const cart = ref<CartItem[]>([]);
+const mostSoldItems = ref<any[]>([]);
+const menuItems = ref<any[]>([]);
+const cart = ref<any[]>([]);
 const pickupTime = ref('');
 const isLoadingMenu = ref(false);
 const isSubmittingOrder = ref(false);
@@ -131,32 +130,32 @@ const loadMenu = async () => {
 
 const loadMostSold = async () => {
   try {
-    const newArrivalIds = newArrivalItems.value.map(item => item.item_id);
-    let fetchedItems: MenuItem[] = [];
+    const newArrivalIds = newArrivalItems.value.map((item: any) => item.item_id);
+    let fetchedItems: any[] = [];
 
     // Check if the API method exists and try to fetch from the backend
-    if (typeof (menuApi as any).getMostSold === 'function') {
+    if ('getMostSold' in menuApi) {
       const response = await (menuApi as any).getMostSold();
       if (response.data && response.data.length > 0) {
         // Filter out items that are already in the "New Arrivals" section
-        fetchedItems = response.data.filter((item: MenuItem) => !newArrivalIds.includes(item.item_id));
+        fetchedItems = response.data.filter((item: any) => !newArrivalIds.includes(item.item_id));
       }
     }
 
     // Fill up to 3 items using fallback (cheapest items) if the API didn't return enough unique items
-    const existingIds = fetchedItems.map(i => i.item_id);
+    const existingIds = fetchedItems.map((i: any) => i.item_id);
     const fallbackItems = [...menuItems.value]
-      .filter(i => !newArrivalIds.includes(i.item_id) && !existingIds.includes(i.item_id))
-      .sort((a, b) => Number(a.price) - Number(b.price));
+      .filter((i: any) => !newArrivalIds.includes(i.item_id) && !existingIds.includes(i.item_id))
+      .sort((a: any, b: any) => Number(a.price) - Number(b.price));
 
     mostSoldItems.value = [...fetchedItems, ...fallbackItems].slice(0, 3);
   } catch (error) {
     console.error('Error fetching most sold items:', error);
     // Fallback if there's a network/server error
-    const newArrivalIds = newArrivalItems.value.map(item => item.item_id);
+    const newArrivalIds = newArrivalItems.value.map((item: any) => item.item_id);
     mostSoldItems.value = [...menuItems.value]
-      .filter(i => !newArrivalIds.includes(i.item_id))
-      .sort((a, b) => Number(a.price) - Number(b.price))
+      .filter((i: any) => !newArrivalIds.includes(i.item_id))
+      .sort((a: any, b: any) => Number(a.price) - Number(b.price))
       .slice(0, 3);
   }
 };
@@ -176,7 +175,7 @@ const saveCartToStorage = () => {
   localStorage.setItem('campusbite_cart', JSON.stringify(cart.value));
 };
 
-const addToCart = (item: MenuItem) => {
+const addToCart = (item: any) => {
   const existing = cart.value.find(c => c.item.item_id === item.item_id);
   if (existing) {
     existing.quantity++;

@@ -71,7 +71,7 @@ const saveProfile = async () => {
   } catch (error: any) {
     console.error('Error updating profile:', error);
     const msg = error.response?.data?.message || 'Failed to update profile.';
-    alert(msg, 'error');
+    alert(String(msg), 'error');
   } finally {
     isSaving.value = false;
   }
